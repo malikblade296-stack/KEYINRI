@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>INRI Proxy — Verify your key</title>
+  <meta name="description" content="Verify your INRI Proxy key to open your proxy dashboard.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%235eead4'/%3E%3Cpath d='M32 8l18 7v16c0 11-7.6 19.6-18 25-10.4-5.4-18-14-18-25V15z' fill='none' stroke='%23052e2b' stroke-width='6' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/static/style.css">
+  <script type="module" src="/static/index.js"></script>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="INRI Proxy home">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.4 9-8 11-4.6-2-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg>
+      </span>
+      <span class="brand-name">INRI Proxy</span>
+    </a>
+  </header>
+
+  <main class="landing-main">
+    <section class="plain-auth">
+      <aside class="auth-card" id="verify">
+        <p class="eyebrow">Verification</p>
+        <h2>Enter your key</h2>
+        <p class="muted">One key unlocks your dashboard. Nothing else to install.</p>
+        <form id="verify-form" novalidate>
+          <label class="field">
+            <span>License key</span>
+            <input id="key" name="key" autocomplete="off" spellcheck="false" placeholder="XXXX-XXXX-XXXX-XXXX-XXXX" required>
+          </label>
+          <p class="form-error" id="verify-error" role="alert"></p>
+          <button class="btn btn-primary btn-block" type="submit" id="verify-btn">Verify &amp; continue</button>
+        </form>
+      </aside>
+
+      <aside class="auth-card maintenance-card" id="maintenance-card" hidden>
+        <p class="eyebrow">Temporarily closed</p>
+        <h2 id="maintenance-message">INRI PROXY ON MAINTENANCE — COME BACK LATER</h2>
+        <p class="muted">The service is being updated. Your key and its remaining time are safe — try again later.</p>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>INRI Proxy — private proxy access</span>
+    <span class="status"><span class="status-dot" id="api-dot"></span><span id="api-status">Checking…</span></span>
+  </footer>
+</body>
+</html>
